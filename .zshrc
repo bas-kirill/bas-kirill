@@ -23,6 +23,19 @@ export PATH_TO_VIRTUAL_ENV=~/.venvs/010-community
 alias python=python3
 alias pip=pip3
 
+# folder shortcuts
+alias idea="cd /Users/eertree/IdeaProjects"
+alias charm="cd /Users/eertree/PycharmProjects"
+
+# docker shortcuts
+alias dc="docker-compose"
+
+# git shortcuts
+alias gc="git commit"
+alias ga="git add"
+alias gs="git status"
+alias gp="git push"
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
