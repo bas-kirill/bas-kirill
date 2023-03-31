@@ -1,9 +1,21 @@
 # eertree hints
+# used ports: netstat -an | grep LISTEN
 # who is using port: sudo lsof -nP -i4TCP:<PORT> | grep LISTEN
+# encrypt with password: zip -re "zip_file_name" "file_name" 
+# git adv log: git log --oneline --graph --all
+# IDEA internal properties: /Users/eertree_work/Library/Application Support/JetBrains/Toolbox/apps/IDEA-U/ch-0/222.4167.29/IntelliJ IDEA.app/Contents/bin/idea.properties
 
 # fingerprint instead of password:
 # 1. sudo vim /etc/pam.d/sudo
 # 2. add auth       sufficient     pam_tid.so at top of the file
+
+# zsh settings
+export HISTFILE=~/.zsh_history    # history file
+export HISTSIZE=1000000000        # history size
+setopt INC_APPEND_HISTORY         # immediate appen
+export HISTTIMEFORMAT="[%F %T] "  # immediate append
+setopt EXTENDED_HISTORY           # add timestamp
+setopt HIST_FIND_NO_DUPS          # ignore duplicates
 
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export PATH=/opt/homebrew/bin:$PATH
@@ -46,6 +58,7 @@ alias gc="git commit"
 alias ga="git add"
 alias gs="git status"
 alias gp="git push"
+alias glp="git log --oneline --graph --all"
 
 # Django
 alias pmt="python manage.py test"
@@ -57,6 +70,9 @@ export JAVA_19_HOME=/Library/Java/JavaVirtualMachines/temurin-19.jdk/Contents/Ho
 
 alias java19="export JAVA_HOME=$JAVA_19_HOME"
 java19
+
+# C++
+alias /opt/homebrew/Cellar/boost/1.81.0_1
 
 # X5
 export MAVEN_OPTS=-Xmx2g
