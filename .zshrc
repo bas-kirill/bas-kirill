@@ -1,9 +1,11 @@
 # eertree hints
 # used ports: netstat -an | grep LISTEN
 # who is using port: sudo lsof -nP -i4TCP:<PORT> | grep LISTEN
+# what ports does it use: lsof -aPi -p PID
 # encrypt with password: zip -re "zip_file_name" "file_name" 
 # git adv log: git log --oneline --graph --all
 # IDEA internal properties: /Users/eertree_work/Library/Application Support/JetBrains/Toolbox/apps/IDEA-U/ch-0/222.4167.29/IntelliJ IDEA.app/Contents/bin/idea.properties
+# dump and do patch: git format-patch -1 (last commit) + git apply (patch name)
 
 # fingerprint instead of password:
 # 1. sudo vim /etc/pam.d/sudo
@@ -105,6 +107,14 @@ eval "$(pyenv init -)"
 export ANT_HOME=/opt/_helper/jdev/tools/apache-ant-1.7.0
 # export M2_HOME=/opt/maven 
 alias alert="osascript -e 'display dialog \"Project ready.\"'"
+export X5_JAVAFX_11_0_2_LIB=/Users/eertree_work/IdeaProjects/x5/xrg-core/javafx-sdk-11.0.2/lib
+export X5_JAVAFX_17_0_6_LIB=/Users/eertree_work/IdeaProjects/x5/xrg-core/javafx-sdk-17.0.6/lib
+
+# C++
+alias cmm="cmake . && make"
+
+# liquibase
+export PATH=$PATH:/Users/eertree_work/liquibase-4.21.1
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
