@@ -1,12 +1,3 @@
-# eertree hints
-# used ports: netstat -an | grep LISTEN
-# who is using port: sudo lsof -nP -i4TCP:<PORT> | grep LISTEN
-# what ports does it use: lsof -aPi -p PID
-# encrypt with password: zip -re "zip_file_name" "file_name" 
-# git adv log: git log --oneline --graph --all
-# IDEA internal properties: /Users/eertree_work/Library/Application Support/JetBrains/Toolbox/apps/IDEA-U/ch-0/222.4167.29/IntelliJ IDEA.app/Contents/bin/idea.properties
-# dump and do patch: git format-patch -1 (last commit) + git apply (patch name)
-
 # fingerprint instead of password:
 # 1. sudo vim /etc/pam.d/sudo
 # 2. add auth       sufficient     pam_tid.so at top of the file
@@ -24,6 +15,28 @@ export PATH=/opt/homebrew/bin:$PATH
 source ~/.bash_profile
 source "$HOME/.sdkman/bin/sdkman-init.sh"
 
+# HINTS:
+#  used ports: netstat -an | grep LISTEN
+#  who is using port: 
+#  alias who_using_port="f() { sudo lsof -nP -i4TCP:\"$1\" | grep LISTEN; }"
+#  what ports does it use: lsof -aPi -p PID
+#  encrypt with password: zip -re "zip_file_name" "file_name" 
+# ----------------
+#  Git:
+#    * pretty log: git log --oneline --graph --all
+#    * How to rename remote branch: https://stackoverflow.com/questions/30590083/how-do-i-rename-both-a-git-local-and-remote-branch-name
+#  git adv log: 
+#  IDEA internal properties: /Users/eertree_work/Library/Application Support/JetBrains/Toolbox/apps/IDEA-U/ch-0/222.4167.29/IntelliJ IDEA.app/Contents/bin/idea.properties
+#  dump and do patch: git format-patch -1 (last commit) + git apply (patch name)
+#  grep logs in real time: tail -f <filename> | grep -E "INFO|WARN|ERROR"
+#  list all PSQL schemas: select schema_name from information_schema.schemata;
+# ----------------
+#  Postgres:
+#   * create schema dump:  pg_dump --dbname=postgres --schema=pricing --file ./dump.sql
+#   * restore schema dump: psql --dbname=postgres --file=./dump.sql
+#   * get db size:         select pg_size_pretty( pg_database_size('postgres') );
+# ----------------
+
 # https://medium.com/code-kings/docker-how-to-fix-failed-to-solve-with-frontend-dockerfile-v0-error-when-building-a-docker-image-6d7dc95abd27
 export DOCKER_BUILDKIT=0
 export COMPOSE_DOCKER_CLI_BUILD=0
@@ -36,6 +49,7 @@ export PATH="/opt/homebrew/sbin:$PATH"
 
 # postgres:
 export PGDATA='/Users/eertree_work/.postgres'
+
 
 # zero10:
 ## backend:
@@ -115,6 +129,12 @@ alias cmm="cmake . && make"
 
 # liquibase
 export PATH=$PATH:/Users/eertree_work/liquibase-4.21.1
+
+# Go
+export GOROOT=/Users/eertree_work/sdk/go1.19.3
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
