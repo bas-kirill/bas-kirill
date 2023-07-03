@@ -19,14 +19,14 @@ fun writeBloodyEnterpriseLikeOpenSource(basKirill: Developer) {
     .codeQuality(SOLID, GoF, TDD)
     .monitoring(Monitor.business + Monitor.techEssentials)
     .infrastructure(RightInfrastructure().include(CI).include(CD))
-    api(Api
+    .api(Api
         .Rest.enable()
         .GRPC.enable()
         .asPlugin()
     )
     .securityBuiltIn(true)
     .testing(manual = false, tdd = true, additional = ChaosTesting.maximize())
-    deploy(CloudProviders.randomOf(AWS, GoogleCloud, Azure))
+    .deploy(CloudProviders.randomOf(AWS, GoogleCloud, Azure))
 
   assert(deployedProject.status == Status.SUCCESS)
 }
