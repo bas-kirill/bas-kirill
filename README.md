@@ -3,7 +3,7 @@
 * Studying at Saint Petersburg State University & YSDA
 * Learning Distributed Systems
 
-```
+```kotlin
 fun writeBloodyEnterpriseLikeOpenSource(basKirill: Developer) {
   val deployedProject = Project(developer = basKirill)
     .requirements(
