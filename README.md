@@ -3,6 +3,7 @@
 * Studying at Saint Petersburg State University & YSDA
 * Learning Distributed Systems
 
+My Professional Goal:
 ```kotlin
 fun writeBloodyEnterpriseLikeOpenSource(basKirill: Developer) {
   val deployedProject = Project(developer = basKirill)
