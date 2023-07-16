@@ -1,0 +1,22 @@
+Host nomix
+	Hostname 179.43.141.41
+	User nomix
+	IdentityFile ~/.ssh/nomix-server
+	Port 22
+
+# --- Sourcetree Generated ---
+Host bas-kirill-GitHub
+	HostName github.com
+	User bas-kirill
+	PreferredAuthentications publickey
+	IdentityFile /Users/eertree_work/.ssh/bas-kirill-GitHub
+	UseKeychain yes
+	AddKeysToAgent yes
+# ----------------------------
+
+# Host risc-v
+# 	HostName riscv64-ssh.asm.farm
+#	User bas-kirill
+#	IdentityFile ~/.ssh/asmfarm
+#	Port 2222
+
