@@ -1,3 +1,17 @@
+# Guide for adding new keys to ssh config file:
+# 1) cd ~/.ssh
+# 2) ssh-keygen
+# 3) scp ~/.ssh/key_name.pub username@hostname:/home/username
+# 4) ssh username@hostname
+# 5) cat key_name.pub >> ~/.ssh/authorized_keys
+# 6) Exit (Ctrl + D) and open local ~/.ssh/config: vim ~/.ssh/config
+# 7) Enter:
+#	 Host risc-v:
+#	 	Hostname hostname
+#	 	User username
+#	 	IdentityFile ~/.ssh/key_name # not public!
+#	 	Port 22 # default ssh port or your own
+
 Host nomix
 	Hostname 179.43.141.41
 	User nomix
