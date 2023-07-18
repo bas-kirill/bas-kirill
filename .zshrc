@@ -135,6 +135,13 @@ export GOROOT=/Users/eertree_work/sdk/go1.19.3
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 
+# PHP (with MAMP)
+export PATH=$PATH:/Applications/MAMP/bin/php/php8.1.13/bin
+
+# Code Review
+function codereview {
+	git checkout "$1" && git pull && git merge --squash "origin/$2"
+}
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
