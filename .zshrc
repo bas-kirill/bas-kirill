@@ -24,6 +24,7 @@ source "$HOME/.sdkman/bin/sdkman-init.sh"
 # ----------------
 #  Git:
 #    * pretty log: git log --oneline --graph --all
+#    * more pretty: git log --graph --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%an%C(reset)%C(bold yellow)%d%C(reset) %C(dim white)- %s%C(reset)' --all
 #    * How to rename remote branch: https://stackoverflow.com/questions/30590083/how-do-i-rename-both-a-git-local-and-remote-branch-name
 #  git adv log: 
 #  IDEA internal properties: /Users/eertree_work/Library/Application Support/JetBrains/Toolbox/apps/IDEA-U/ch-0/222.4167.29/IntelliJ IDEA.app/Contents/bin/idea.properties
@@ -142,6 +143,7 @@ export PATH=$PATH:/Applications/MAMP/bin/php/php8.1.13/bin
 function codereview {
 	git checkout "$1" && git pull && git merge --squash "origin/$2"
 }
+
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
