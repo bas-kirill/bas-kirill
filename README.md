@@ -20,8 +20,8 @@ fun writeBloodyEnterpriseLikeOpenSource(basKirill: Developer) {
     .monitoring(Monitor.business + Monitor.techEssentials)
     .infrastructure(RightInfrastructure().include(CI).include(CD))
     .api(Api
-        .Rest.enable()
-        .GRPC.enable()
+        .REST.enable()
+        .gRPC.enable()
         .asPlugin()
     )
     .securityBuiltIn(true)
