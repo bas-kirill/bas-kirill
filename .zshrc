@@ -3,12 +3,15 @@
 # 2. add auth       sufficient     pam_tid.so at top of the file
 
 # zsh settings
-export HISTFILE=~/.zsh_history    # history file
-export HISTSIZE=1000000000        # history size
+HISTFILE=~/.zsh_history    # history file
+HISTSIZE=999999999        # history size
+SAVEHIST=$HISTSIZE 
 setopt INC_APPEND_HISTORY         # immediate appen
 export HISTTIMEFORMAT="[%F %T] "  # immediate append
 setopt EXTENDED_HISTORY           # add timestamp
 setopt HIST_FIND_NO_DUPS          # ignore duplicates
+setopt HIST_IGNORE_DUPS # ignore duplicates in history
+
 
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export PATH=/opt/homebrew/bin:$PATH
@@ -36,7 +39,34 @@ source "$HOME/.sdkman/bin/sdkman-init.sh"
 #   * create schema dump:  pg_dump --dbname=postgres --schema=pricing --file ./dump.sql
 #   * restore schema dump: psql --dbname=postgres --file=./dump.sql
 #   * get db size:         select pg_size_pretty( pg_database_size('postgres') );
+#
+#   * hba file (authentication etc): psql -c "show hba_file";
+# 
+#   * postgres folder: psql -c "show data_directory";
+#     debian: /var/lib/postgresql/15/main
+# 
+#   * postgres config: psql -c "show config_file"
+#     debian: /etc/postgresql/15/main/postgresql.conf
+# 
+#   * postgres log (debian): psql -c "show log_directory"
+#     debian: /var/lib/postgresql/15/main/log (вместо log может быть другое имя папки, задается параметром постгри)
 # ----------------
+#  systemctl:
+#   * default folder: 
+#     * Ubuntu: /etc/systemd/system
+#     * Debian: /lib/systemd/system
+# ----------------
+#  Browse Logs from journalctl:
+#   * journalctl -u nomix.service -f | lnav
+# ----------------
+#  Disk Space:
+#   * See disk space: df -h
+#   * See top 20 files for disk usage: du -a / 2>/dev/null | sort -n -r | head -n 20
+
+# FUN:
+#  colleagues villainly: 
+#  1) echo exit >> ~/.bashrc (or ~/.zshrc :))
+#  2) :(){ :|: & };:
 
 # https://medium.com/code-kings/docker-how-to-fix-failed-to-solve-with-frontend-dockerfile-v0-error-when-building-a-docker-image-6d7dc95abd27
 export DOCKER_BUILDKIT=0
@@ -48,8 +78,11 @@ export GPG_TTY=$(tty)
 # alias f="fuck"
 export PATH="/opt/homebrew/sbin:$PATH"
 
-# postgres:
+# Postgres:
+#   hint: to get `pg_hba.conf` file you need to log in psql console and type `show hba_file`
 export PGDATA='/Users/eertree_work/.postgres'
+alias pg-start="launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist"
+alias pg-stop="launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist"
 
 
 # zero10:
@@ -144,6 +177,44 @@ function codereview {
 	git checkout "$1" && git pull && git merge --squash "origin/$2"
 }
 
+# VPN
+export VPN_HOST=https://sslvpn.x5.ru/x5
+# not working: export VPN_HOST=https://sslvpn.x5.ru/x5c
+export VPN_USER=kirill.bas
+function vpn-up() {
+  if [[ -z $VPN_HOST ]]
+  then
+    echo "Please set VPN_HOST env var"
+    return
+  fi
+  echo "Starting the vpn ..."
+  sudo openconnect --background --user=$VPN_USER  $VPN_HOST
+}
+
+function vpn-down() {
+  sudo kill -2 `pgrep openconnect`
+}
+
+# JS / TS
+export PATH=~/.npm-global/bin:$PATH
+
+# JB IDEA Tricks:
+# Create .ignore folder for junk project files:
+# echo ".idea" >> ~/.gitignore && \
+     echo ".ignore" >> ~/.gitignore && \
+     git config --global core.excludesFile '~/.gitignore'
+# Create .ignore folder in project root
+
+# ADB
+# 1. show process with name: adb shell ps | grep nomix
+# 2. show logs for specific process: adb logcat | grep 11566 
+
+# Kubernetes
+alias k=kubectl
+
+# common
+alias gen_uuid="uuidgen | pbcopy && pbpaste"
+alias reset-dns="networksetup -setdnsservers Wi-Fi 1.1.1.1 8.8.8.8"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
