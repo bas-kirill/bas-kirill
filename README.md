@@ -8,7 +8,7 @@ My Professional Goal:
 fun writeBloodyEnterpriseLikeOpenSource(basKirill: Developer) {
   val deployedProject = Project(developer = basKirill)
     .requirements(
-      Requirements(trustToManagers = true, featureOrientedMind = true, userStories = true)
+      Requirements(trustToManagers = false, featureOrientedMind = true, userStories = true)
     )
     .core(howToBuild = DomainDrivenDesignStrategy())
     .architecture(
