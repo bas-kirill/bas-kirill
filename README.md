@@ -2,6 +2,7 @@
 * Ex Backend Developer at @yandex, worked at FinTech and ML Infra
 * Studying at Saint Petersburg State University & YSDA
 * Learning Distributed Systems
+* ACM ICPC Semi-Finalist
 
 My Professional Goal:
 ```kotlin
