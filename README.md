@@ -1,7 +1,6 @@
 # Hi there 👋 I'm Kirill
-* Ex Backend Developer at @yandex, worked at FinTech and ML Infra
-* Studying at Saint Petersburg State University & YSDA
 * Learning Distributed Systems
+* Ex Backend Developer at @yandex, worked at FinTech and ML Infra
 * ACM ICPC Semi-Finalist
 
 My Professional Goal:
