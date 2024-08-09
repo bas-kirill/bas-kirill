@@ -1,8 +1,7 @@
 # Hi there 👋 I'm Kirill
-* Learning Distributed Systems
-* Ex Backend Developer at @yandex, worked at FinTech and ML Infra
-* Spring Certified Professional
 * ACM ICPC Semi-Finalist
+* Spring Certified Professional
+* Ex Backend Developer at @yandex, worked at FinTech and ML Infra
 
 My Professional Goal:
 ```kotlin
