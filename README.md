@@ -1,6 +1,7 @@
 # Hi there 👋 I'm Kirill
 * ACM ICPC Semi-Finalist
 * AWS Solutions Architect Associate
+* GCP Associate Cloud Engineer
 * Spring Certified Professional
 * Ex Backend Developer at @yandex, worked at FinTech and ML Infra
 
