@@ -3,7 +3,6 @@
 * AWS Solutions Architect Associate
 * GCP Associate Cloud Engineer
 * Certified Kubernetes Application Developer
-* Spring Certified Professional
 * Ex Backend Developer at @yandex, worked at FinTech and ML Infra
 
 My Professional Goal:
