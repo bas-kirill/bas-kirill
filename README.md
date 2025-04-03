@@ -3,6 +3,7 @@
 * AWS Solutions Architect Associate
 * GCP Associate Cloud Engineer
 * Certified Kubernetes Application Developer
+* Iuliana Cosmina "Pro Spring 7" Book Contributor
 * Ex Backend Developer at @yandex, worked at FinTech and ML Infra
 
 My Professional Goal:
